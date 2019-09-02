@@ -56,6 +56,11 @@ router.post('/code',(req,res)=>{
         res.status(401).send("ni mila")
         else
         {
+            if(userdata.password!=data.password)
+            {
+                res.status(401).send("ni mila")
+            }
+            else
             res.status(200).send(data)
         }
 
